@@ -25,3 +25,15 @@ def test_multiply_by_zero():
 
 def test_multiply_negative():
     assert calculator.multiply(-2, 5) == -10
+
+
+def test_subtract_positive():
+    assert calculator.subtract(9, 4) == 5
+
+
+def test_subtract_negative_result():
+    assert calculator.subtract(3, 8) == -5
+
+
+def test_subtract_zero():
+    assert calculator.subtract(7, 0) == 7

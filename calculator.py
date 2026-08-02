@@ -12,3 +12,8 @@ def add(a: float, b: float) -> float:
 def multiply(a: float, b: float) -> float:
     """Return the product of a and b."""
     return a * b
+
+
+def subtract(a: float, b: float) -> float:
+    """Return the difference of a and b."""
+    return a - b

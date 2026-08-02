@@ -1,0 +1,132 @@
+[
+  {
+    "index": 0,
+    "timestamp": "2026-08-02T14:23:24.008425+00:00",
+    "action": "genesis",
+    "data": {
+      "issue": 1,
+      "title": "Add a subtract function",
+      "requirements": [
+        "REQ-1: Add a subtract(a, b) function to calculator.py that returns a - b",
+        "REQ-2: Follow the existing style: float type hints and a one-line docstring",
+        "REQ-3: Add unit tests to test_calculator.py covering two positive numbers, a result that goes negative, and subtracting zero",
+        "REQ-4: python -m pytest -q passes with the new tests included"
+      ]
+    },
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "1fd2b15b30c4a4d2efe023b94a59c7ee1eee02b387c1886b78106dab70575144",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAED35Ro8nIGQ/8Kl+LGbDCjrPZgaktNPx2RDSkCxGe0caEQEHDecDIJolB\nnOYtBuQKKNKSYkLCG1lBDgfnaHrlkN\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 1,
+    "timestamp": "2026-08-02T14:23:40.406223+00:00",
+    "action": "branch-create",
+    "data": {
+      "branch": "forgeproof/1",
+      "base": "main",
+      "base_sha": "ad093a8f9aab1f458da0e1f94656b4b5b5a9b1c1"
+    },
+    "prev_hash": "1fd2b15b30c4a4d2efe023b94a59c7ee1eee02b387c1886b78106dab70575144",
+    "hash": "54d3b6327935ef52dd682c149e79d4ca2b89bbd120daf0be25e551bceaf74750",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEAXgTVnFpy4LuBpGhgxyZfVAXMsP/vvFm1eu6tRyGmSvtYYo4YPbVAHYc\nWtwpgmTTUwoK7ICQbjKcYRNiMJ2McI\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 2,
+    "timestamp": "2026-08-02T14:23:49.571934+00:00",
+    "action": "file-edit",
+    "data": {
+      "path": "calculator.py",
+      "operation": "modify",
+      "sha256": "f84905450b4350b6f4117e8f484dc3f37c9a84e592be8006b6d679522bf4afaa"
+    },
+    "prev_hash": "54d3b6327935ef52dd682c149e79d4ca2b89bbd120daf0be25e551bceaf74750",
+    "hash": "bfae0e7122b2465b766f89f198935f965d0066745cb7ee6ae802b1139e4c2e00",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEBQWWPwo/73PjUd48REs/yyuhzh+7AgbMpJGTGxe+88G1KvVlhNKrqic5\nQ4FIu1QoTB4nQkQNgXdBzfAZz0X3UG\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 3,
+    "timestamp": "2026-08-02T14:23:52.321194+00:00",
+    "action": "decision",
+    "data": {
+      "context": "Where to place subtract and how to word its docstring",
+      "choice": "Appended subtract after multiply, mirroring the existing flat module-level layout with float type hints and a one-line 'Return the difference of a and b.' docstring",
+      "rationale": "REQ-2 requires matching existing style; add and multiply both use float hints and a single-line 'Return the ... of a and b.' docstring, so consistency beats introducing a new convention"
+    },
+    "prev_hash": "bfae0e7122b2465b766f89f198935f965d0066745cb7ee6ae802b1139e4c2e00",
+    "hash": "73e4faf90ece45bf916e932f515010e439c99279c6a8572c622f623e6f2e0c3c",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEB3Eb6313M0/SfDtWX2NoQ7u4vsOOHjfrBW6K+Zf2RhihrmdGiLSIo2T9\nD5AQMy80ghk+mR77ZLBJj1A2ZuxUgD\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 4,
+    "timestamp": "2026-08-02T14:24:04.389316+00:00",
+    "action": "file-edit",
+    "data": {
+      "path": "test_calculator.py",
+      "operation": "modify",
+      "sha256": "5c38a1099e2fc45486cf9a6f2cb2ea97b7a38e0c31017b800614d477c4cf4173"
+    },
+    "prev_hash": "73e4faf90ece45bf916e932f515010e439c99279c6a8572c622f623e6f2e0c3c",
+    "hash": "f5c91c7c25608b42f6905f799230d3f27486077c7d313628f7220d415bb8f050",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEABqdoqBntvZF338N8uwWF0zvSvhmuKAlIU59uq3Zz2D5VlWW3vqIj1IW\nYwKw6yjBSAlUIdfo/dVx0bwamdVjAB\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 5,
+    "timestamp": "2026-08-02T14:24:06.597833+00:00",
+    "action": "decision",
+    "data": {
+      "context": "How to structure the three required subtract test cases",
+      "choice": "Three separate test functions (test_subtract_positive, test_subtract_negative_result, test_subtract_zero) using bare asserts and module-level calculator import",
+      "rationale": "Existing suite uses one flat test function per case with bare asserts and no parametrization; a pytest.mark.parametrize block would be terser but would diverge from the established convention and make a failing case harder to name in coverage reporting"
+    },
+    "prev_hash": "f5c91c7c25608b42f6905f799230d3f27486077c7d313628f7220d415bb8f050",
+    "hash": "558464c9379f31387439704d7176699881d5087ec4cc5caa763cfc651101b0ad",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEDW1cu7Shp9ARN5XGxRiZmauIk89173CbwS1510z/I9Yn6uJaqHFOaMJf\n9s6EwW0XiZghDAWKjXsY9+H5hsGSsJ\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 6,
+    "timestamp": "2026-08-02T14:24:22.293186+00:00",
+    "action": "test-result",
+    "data": {
+      "suite": "pytest",
+      "passed": 9,
+      "failed": 0,
+      "coverage": {
+        "REQ-1": [
+          "test_subtract_positive",
+          "test_subtract_negative_result",
+          "test_subtract_zero"
+        ],
+        "REQ-2": [
+          "test_subtract_positive"
+        ],
+        "REQ-3": [
+          "test_subtract_positive",
+          "test_subtract_negative_result",
+          "test_subtract_zero"
+        ],
+        "REQ-4": [
+          "test_subtract_positive",
+          "test_subtract_negative_result",
+          "test_subtract_zero"
+        ]
+      },
+      "failed_tests": []
+    },
+    "prev_hash": "558464c9379f31387439704d7176699881d5087ec4cc5caa763cfc651101b0ad",
+    "hash": "93d8dd57bfd4891a5a3e790b77f5d76bd6c35b0f34d34896c92a25263524d916",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEArOlbNR6QzwHXEevTZsU5rhBfO1sxuTxgsiBs8RaIqZCtkeNcFryCIbv\n4uQW6kresa+4f0YHzVW+jrb7TmPYAI\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 7,
+    "timestamp": "2026-08-02T14:24:24.521533+00:00",
+    "action": "lint-result",
+    "data": {
+      "tool": "ruff",
+      "errors": 0,
+      "warnings": 0
+    },
+    "prev_hash": "93d8dd57bfd4891a5a3e790b77f5d76bd6c35b0f34d34896c92a25263524d916",
+    "hash": "a42f42c26e6b2d95106788202f8780482205015c22f5c5f59dfa9d213583546f",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgq6LNpFuhbdPQBKnI1adq47Z65Z\no1yZ7JvCHHzXFp4XEAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEBg/iUE1lD4qRiAbSkaoAHUMLm92q42E2YqgiEn/DWVot3PG/wib9Jdfg\nXouvSRPZ6Sc0Jjre7K9cZFm3yLQOgG\n-----END SSH SIGNATURE-----"
+  }
+]
