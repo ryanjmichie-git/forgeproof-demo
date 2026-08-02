@@ -1,0 +1,18 @@
+name: Verify Provenance
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write   # lets the Action upsert its audit report as a PR comment
+
+jobs:
+  verify:
+    # Stable literal — this is the name to require in branch protection.
+    name: forgeproof-verify
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'forgeproof/')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ryanjmichie-git/forgeproof-verify@0bd8aaec4ede6a53be0ed3dbf130c22a0cbcfe8f # v1.0.2
