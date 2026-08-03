@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "format": "forgeproof-rpack",
+  "issue": {
+    "number": 1,
+    "title": "Add a subtract function",
+    "url": "https://github.com/ryanjmichie-git/forgeproof-demo/issues/1"
+  },
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add a subtract(a, b) function to calculator.py that returns a - b",
+      "status": "covered",
+      "tests": [
+        "test_subtract_positive",
+        "test_subtract_negative_result",
+        "test_subtract_zero"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Follow the existing style: float type hints and a one-line docstring",
+      "status": "covered",
+      "tests": [
+        "test_subtract_positive"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add unit tests to test_calculator.py covering two positive numbers, a result that goes negative, and subtracting zero",
+      "status": "covered",
+      "tests": [
+        "test_subtract_positive",
+        "test_subtract_negative_result",
+        "test_subtract_zero"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "python -m pytest -q passes with the new tests included",
+      "status": "covered",
+      "tests": [
+        "test_subtract_positive",
+        "test_subtract_negative_result",
+        "test_subtract_zero"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "calculator.py",
+      "operation": "modify",
+      "sha256": "f84905450b4350b6f4117e8f484dc3f37c9a84e592be8006b6d679522bf4afaa"
+    },
+    {
+      "path": "test_calculator.py",
+      "operation": "modify",
+      "sha256": "5c38a1099e2fc45486cf9a6f2cb2ea97b7a38e0c31017b800614d477c4cf4173"
+    }
+  ],
+  "decisions": [
+    {
+      "context": "Where to place subtract and how to word its docstring",
+      "choice": "Appended subtract after multiply, mirroring the existing flat module-level layout with float type hints and a one-line 'Return the difference of a and b.' docstring",
+      "rationale": "REQ-2 requires matching existing style; add and multiply both use float hints and a single-line 'Return the ... of a and b.' docstring, so consistency beats introducing a new convention"
+    },
+    {
+      "context": "How to structure the three required subtract test cases",
+      "choice": "Three separate test functions (test_subtract_positive, test_subtract_negative_result, test_subtract_zero) using bare asserts and a module-level calculator import",
+      "rationale": "Existing suite uses one flat test function per case with bare asserts and no parametrization; a pytest.mark.parametrize block would be terser but would diverge from the established convention and make a failing case harder to name in requirement coverage"
+    }
+  ],
+  "evaluation": {
+    "status": "pass",
+    "tests_passed": 9,
+    "tests_failed": 0,
+    "lint_errors": 0,
+    "requirement_coverage": "100%",
+    "uncovered_requirements": [],
+    "failed_tests": []
+  },
+  "chain_hash": "e802fddaef234544df8735413e0e4e7d3c794b56e46742cc5cb9ee5eff8c01d6",
+  "public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILccJzhkasgWaAjTJyngsF5BynzQMeP3xdrhEKonMucw user@PC-951318",
+  "root_digest": "6b772be756207573b0ee4a11b867c4ddbb5b47affe1505c558d5ff7cadd84d07",
+  "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgtxwnOGRqyBZoCNMnKeCwXkHKfN\nAx4/fF2uEQqicy5zAAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEDg3LMalCQPoAUMZWGLl9lTgrvU2TSx5D0m3d8KqiBUDVknX1tTIV37pe\nP0guTCqUuLG5jqLu2WFc9UB5qnlY8P\n-----END SSH SIGNATURE-----"
+}

@@ -128,5 +128,17 @@
     "prev_hash": "ca25bebb21c2f87cebb6966b9a138b301e9d5b319775d2c5f9fd884dfb38bd08",
     "hash": "21e290372a9f0ff2ad9861ee5031a6f7a327ab930db25d750fe694c17132ec59",
     "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgtxwnOGRqyBZoCNMnKeCwXkHKfN\nAx4/fF2uEQqicy5zAAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEDr8IgFSrMVRZedNSEzhcPSici3UQxmQmqeTL+Fro4k505RWEoQInaKh9\naUfVwSStH7rIwx9peJxvUmiXAxnRYG\n-----END SSH SIGNATURE-----"
+  },
+  {
+    "index": 8,
+    "timestamp": "2026-08-03T14:08:48.397587+00:00",
+    "action": "finalize",
+    "data": {
+      "commit_sha": "dad21a7af1fe545cd2eba9e772bf59fb28e087b5",
+      "chain_length": 9
+    },
+    "prev_hash": "21e290372a9f0ff2ad9861ee5031a6f7a327ab930db25d750fe694c17132ec59",
+    "hash": "69ba57529e2acdb48ceee0bda38e39ec1eb3d274f56a36b753a7d4ce57c4259f",
+    "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgtxwnOGRqyBZoCNMnKeCwXkHKfN\nAx4/fF2uEQqicy5zAAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEAO+fRv+lKyDeomCV/Lc40QBp5oKQ/QgoB9L0EoQOhZxzsNgaezcncNLP\nXCPVjY2+9sJuKApldQWSvmBBo/RZoO\n-----END SSH SIGNATURE-----"
   }
 ]
