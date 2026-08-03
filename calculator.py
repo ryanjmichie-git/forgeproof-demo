@@ -15,5 +15,5 @@ def multiply(a: float, b: float) -> float:
 
 
 def subtract(a: float, b: float) -> float:
-    """Return a minus b."""   # <- was: Return the difference of a and b.
+    """Return the difference of a and b."""
     return a - b
