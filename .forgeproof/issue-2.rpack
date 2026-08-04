@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "format": "forgeproof-rpack",
+  "issue": {
+    "number": 2,
+    "title": "Add a divide function with divide-by-zero handling",
+    "url": "https://github.com/ryanjmichie-git/forgeproof-demo/issues/2"
+  },
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add a divide(a, b) function to calculator.py that returns a / b",
+      "status": "covered",
+      "tests": [
+        "test_divide_whole_result",
+        "test_divide_fractional_result",
+        "test_divide_negative_operand"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Raise ValueError with a clear message when b is zero - do not return inf or None",
+      "status": "covered",
+      "tests": [
+        "test_divide_by_zero_raises"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Follow the existing style: float type hints and a one-line docstring",
+      "status": "covered",
+      "tests": [
+        "test_divide_whole_result"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add unit tests covering a whole-number result, a fractional result, a negative operand, and divide-by-zero raising ValueError via pytest.raises",
+      "status": "covered",
+      "tests": [
+        "test_divide_whole_result",
+        "test_divide_fractional_result",
+        "test_divide_negative_operand",
+        "test_divide_by_zero_raises"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "python -m pytest -q passes with the new tests included",
+      "status": "covered",
+      "tests": [
+        "test_divide_whole_result",
+        "test_divide_fractional_result",
+        "test_divide_negative_operand",
+        "test_divide_by_zero_raises"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "calculator.py",
+      "operation": "modify",
+      "sha256": "cfaa112ab0bfefddafe5d579af5b6c8ce75553e028d38a7491b0905947b22c98"
+    },
+    {
+      "path": "test_calculator.py",
+      "operation": "modify",
+      "sha256": "b1631a622ff17bba94e4f1759e3451d85c82ca141e9bab121735fee46d94c8d3"
+    }
+  ],
+  "decisions": [
+    {
+      "context": "How to signal divide-by-zero to callers",
+      "choice": "Explicit guard (if b == 0) raising ValueError with message: cannot divide by zero, placed before the division",
+      "rationale": "REQ-2 forbids returning inf or None. Letting Python raise ZeroDivisionError naturally would also avoid inf, but ValueError is what the issue specifies and it keeps the contract explicit rather than leaking an arithmetic-level exception"
+    },
+    {
+      "context": "How to assert the divide-by-zero behavior in tests",
+      "choice": "pytest.raises(ValueError, match=cannot divide by zero) rather than a bare pytest.raises(ValueError)",
+      "rationale": "REQ-2 requires a clear message, not merely the right exception type. Matching the message pins the contract so a future refactor that raises ValueError for an unrelated reason cannot silently satisfy the test"
+    }
+  ],
+  "evaluation": {
+    "status": "pass",
+    "tests_passed": 13,
+    "tests_failed": 0,
+    "lint_errors": 0,
+    "requirement_coverage": "100%",
+    "uncovered_requirements": [],
+    "failed_tests": []
+  },
+  "chain_hash": "5bf04d25ab4721aa1f861a55871b22e7b6b1766cc64c6953814c0ad2966cd9d0",
+  "public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDL3TcLawV0RbBsKBGzhneRfTHQj+550/dt49WnMXD2w user@PC-951318",
+  "root_digest": "2864f804e7612633ed62452870e8fcf1a6f0401774fbf032d2bb7144230872af",
+  "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgMvdNwtrBXRFsGwoEbOGd5F9MdC\nP7nnT923j1acxcPbAAAAAKZm9yZ2Vwcm9vZgAAAAAAAAAGc2hhNTEyAAAAUwAAAAtzc2gt\nZWQyNTUxOQAAAEAbmdLzUERI07mEv8pg2vVm49UjgX95rrR5wrGqKxxuawpvNkHtk94G0Z\nf6sztDyvXxu0yj+S9epopTrAfNE+sN\n-----END SSH SIGNATURE-----"
+}
