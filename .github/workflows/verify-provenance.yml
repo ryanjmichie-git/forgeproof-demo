@@ -15,4 +15,20 @@ jobs:
     if: startsWith(github.head_ref, 'forgeproof/')
     steps:
       - uses: actions/checkout@v4
+
+      # Verify only the bundle this PR introduces, not the whole .forgeproof/
+      # archive. A bundle attests that a specific set of files hashed to
+      # specific values AT THE COMMIT IT NAMES. Re-checking an older bundle
+      # against a newer tree is therefore guaranteed to fail as soon as a
+      # later issue edits the same file — issue-1.rpack legitimately stops
+      # matching calculator.py the moment issue #2 adds divide() to it.
+      # That is the artifact check working, not a tamper. The branch is
+      # always forgeproof/<issue>, which is already asserted by the `if:`
+      # above, so the bundle path is derivable from the head ref.
+      - name: Resolve this PR's bundle
+        id: bundle
+        run: echo "path=.forgeproof/issue-${GITHUB_HEAD_REF#forgeproof/}.rpack" >> "$GITHUB_OUTPUT"
+
       - uses: ryanjmichie-git/forgeproof-verify@0bd8aaec4ede6a53be0ed3dbf130c22a0cbcfe8f # v1.0.2
+        with:
+          bundle: ${{ steps.bundle.outputs.path }}
