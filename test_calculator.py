@@ -1,5 +1,7 @@
 """Tests for the calculator library."""
 
+import pytest
+
 import calculator
 
 
@@ -37,3 +39,20 @@ def test_subtract_negative_result():
 
 def test_subtract_zero():
     assert calculator.subtract(7, 0) == 7
+
+
+def test_divide_whole_result():
+    assert calculator.divide(12, 4) == 3
+
+
+def test_divide_fractional_result():
+    assert calculator.divide(7, 2) == 3.5
+
+
+def test_divide_negative_operand():
+    assert calculator.divide(-9, 3) == -3
+
+
+def test_divide_by_zero_raises():
+    with pytest.raises(ValueError, match="cannot divide by zero"):
+        calculator.divide(1, 0)
